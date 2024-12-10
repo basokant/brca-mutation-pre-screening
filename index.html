@@ -1,0 +1,131 @@
+<!doctype html>
+<html data-theme="light" lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="stylesheet" href="/pico.min.css" />
+    <link rel="stylesheet" href="/style.css" />
+    <meta name="color-scheme" content="light" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BRCA Mutation Pre-Screening</title>
+  </head>
+  <body>
+    <header class="container">
+      <img class="logo" src="/Astrazeneca-Emblem.png" />
+    </header>
+    <img class="header-image" src="/breast-cancer-header.png" />
+    <main class="container">
+      <br />
+      <div>
+        <h1>BRCA Mutation Pre-Screening:</h1>
+        <h6>Am I Eligible for the High-Risk OBSP?</h6>
+      </div>
+      <br />
+      <form name="pre-screening-form" id="pre-screening-form">
+        <label>
+          Email
+          <input
+            type="email"
+            name="email"
+            placeholder="Email"
+            autocomplete="email"
+            required
+          />
+        </label>
+        <fieldset>
+          <legend>
+            Have you been told by a doctor or genetic counselor that you carry
+            any of the following genes: BRCA1, BRCA2, TP53, or PALB2?
+          </legend>
+          <label>
+            <input type="radio" name="q1" value="Yes" required />
+            Yes
+          </label>
+          <label>
+            <input type="radio" name="q1" value="No" required />
+            No
+          </label>
+        </fieldset>
+        <fieldset>
+          <legend>
+            Have you been told by a genetic counselor that your risk for breast
+            cancer is higher due to a close family member carrying a BRCA1,
+            BRCA2, TP53, or PALB2 gene?
+          </legend>
+          <label>
+            <input type="radio" name="q2" value="Yes" required />
+            Yes
+          </label>
+          <label>
+            <input type="radio" name="q2" value="No" required />
+            No
+          </label>
+        </fieldset>
+        <fieldset>
+          <legend>
+            Have you been assessed by a genetics clinic (using IBIS or CanRisk
+            tools) as having a 25% or greater lifetime risk for breast cancer
+            based on personal and family history?
+          </legend>
+          <label>
+            <input type="radio" name="q3" value="Yes" required />
+            Yes
+          </label>
+          <label>
+            <input type="radio" name="q3" value="No" required />
+            No
+          </label>
+        </fieldset>
+        <fieldset>
+          <legend>
+            Have you had radiation therapy to the chest to treat another cancer
+            before age 30 AND was this at least eight years ago?
+          </legend>
+          <label>
+            <input type="radio" name="q4" value="Yes" required />
+            Yes
+          </label>
+          <label>
+            <input type="radio" name="q4" value="No" required />
+            No
+          </label>
+        </fieldset>
+        <input type="submit" value="Results" />
+        <br />
+      </form>
+      <dialog id="eligible-modal">
+        <article>
+          <header>
+            <h3>You're Eligible</h3>
+          </header>
+          <img src="/eligible.png" />
+          <br />
+          <br />
+          <p>
+            You meet the eligibility criteria for the High Risk Ontario Breast
+            Screening Program and may benefit from BRCA mutation screening. Ask
+            your doctor about BRCA screening at your earliest convenience.
+            Please note that individuals with a personal history of breast
+            cancer and/or breast implants are still eligible for screening and
+            those over the age of 70 are not accepted in the program.
+          </p>
+        </article>
+      </dialog>
+      <dialog id="not-eligible-modal">
+        <article>
+          <header>
+            <h3>You're Not Eligible</h3>
+          </header>
+          <p>
+            You do not meet the eligibility criteria for the High Risk Ontario
+            Breast Screening Program and are not encouraged to pursue BRCA
+            mutation screening at this time. However, regular breast screening
+            may still be important for you, ask your doctor for further medical
+            advice.
+          </p>
+        </article>
+      </dialog>
+    </main>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
